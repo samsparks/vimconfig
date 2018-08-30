@@ -12,34 +12,14 @@ set viminfo='20,\"50
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Theme/Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"set background=dark " we are using a dark background
 syntax on " syntax highlighting on
-"colorscheme elflord
 colorscheme minimalist
-
-let c_no_curly_error=1 "prevent syntax highlight from flaging initializer lists as an error
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Files/Backups
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nobackup " Don't keep one
 set noswf
-"set makeef=error.err " When using make, where should it dump the file
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vim UI
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set lsp=0 " space it out a little more (easier to read)
-set wildmenu " turn on wild menu
-set wildmode=longest,list " let me tab complete file names
-set ruler " Always show current positions along the bottom 
-set cmdheight=2 " the command bar is 2 high
-set backspace=2 " make backspace work normal
-"set shortmess=atI " shortens messages to avoid 'press a key' prompt 
-set report=0 " tell us when anything is changed via :...
-set ch=2
-set mousehide " Hide the mouse when typing text
-set suffixes=.bak,~,.swp,.o,.out
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Visual Cues
@@ -72,10 +52,6 @@ set ignorecase
 " Make shift-insert work like in Xterm
 map <S-Insert> <MiddleMouse>
 map! <S-Insert> <MiddleMouse>
-
-" Use these to save and to quit
-map  :w! $HOME/.bak/%:t<CR>:w<CR>
-map  :q<CR>
 
 " Use ^N to toggle between showing line numbers, and not
 :nmap <C-n><C-n> :se nu! <CR>
@@ -111,10 +87,6 @@ if filereadable("SConstruct")
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CScope
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "map <F8> :!/usr/bin/ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
@@ -130,8 +102,13 @@ set showmode
 " Append error format for boost test
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "set errorformat+=%f(%l):%r
-" Ignore disabled tests
-set  errorformat^=%-G%.%#Test\ case\ is\ disabled%.%#
+ 
+" Ignore disabled tests when working in Apex
+if !empty(glob("Apex/SConscript"))
+    set  errorformat^=%-G%.%#Test\ case\ is\ disabled%.%#
+endif
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Load plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 execute pathogen#infect()
-
