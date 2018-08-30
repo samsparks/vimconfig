@@ -4,3 +4,9 @@
 [submodule "bundle/dracula-them"]
 	path = bundle/dracula-them
 	url = https://github.com/dracula/vim.git
+[submodule "bundle/vim-obsession"]
+	path = bundle/vim-obsession
+	url = https://github.com/tpope/vim-obsession.git
+[submodule "bundle/vim-prosession"]
+	path = bundle/vim-prosession
+	url = https://github.com/dhruvasagar/vim-prosession.git

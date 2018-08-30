@@ -8,5 +8,11 @@ Currently installed submodules:
     ```
 * dracula colorscheme
     ```sh
-    $ git submodule add https://github.com/dracula/vim.git bundle/dracula-theme
+    $ git -C bundle submodule add https://github.com/dracula/vim.git dracula-theme
     ```
+* vim pro-session. Persists vim state across editor openings
+    ```sh
+    $ git -C bundle submodule add https://github.com/tpope/vim-obsession.git
+    $ git -C bundle submodule add https://github.com/dhruvasagar/vim-prosession.git
+    ```
+
