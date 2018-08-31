@@ -14,7 +14,8 @@ Bundle 'tpope/vim-obsession'
 Bundle 'dhruvasagar/vim-prosession'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
-Bundle 'majutsushi/tagbar'  " uninstall exuberant-ctags if this doesn't have value
+ " uninstall exuberant-ctags if tagbar doesn't have value
+Bundle 'majutsushi/tagbar'
 "Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
