@@ -8,11 +8,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Bundle 'octol/vim-cpp-enhanced-highlight'
-Bundle 'dracula/vim'
+"Bundle 'dracula/vim'
+Bundle 'https://github.com/nanotech/jellybeans.vim.git'
 Bundle 'tpope/vim-obsession'
 Bundle 'dhruvasagar/vim-prosession'
-" YouCompleteMe
-" vim-airline/vim-airline
+Bundle 'vim-airline/vim-airline'
+Bundle 'vim-airline/vim-airline-themes'
+Bundle 'majutsushi/tagbar'  " uninstall exuberant-ctags if this doesn't have value
+"Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -81,4 +84,5 @@ endif
 " Theme/Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "syntax on " syntax highlighting on
-colorscheme dracula
+colorscheme jellybeans
+let g:airline_theme="bubblegum"
