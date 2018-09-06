@@ -35,6 +35,8 @@ set ignorecase " ignore case when searching
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set expandtab
 set ts=4
+set sw=4
+set ai
 set nowrap
 "let c_space_errors = 1   "highlight space errors in c
 
@@ -75,11 +77,15 @@ nnoremap <F2> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 set showmode
 
-" Append error format for boost test
+" Append error format for apex's system tests
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ignore disabled tests when working in Apex
 if !empty(glob("Apex/SConscript"))
+    " Ignore disabled tests when working in Apex
     set  errorformat^=%-G%.%#Test\ case\ is\ disabled%.%#
+    " ignore: 2018-Sep-06 12:44:20.666194: Apex 3.0.0 with 3 components.
+    set  errorformat^=%-G%.%#Apex\ %\\d+%.%\\d+%.%%\\d+\ with\ %\\d+\ components%.%#
+    " ignore: unknown location(0): fatal error in
+    set  errorformat^=%-Gunknown\ location(0):\ fatal\ error\ in%.%#
 endif
 
 " Theme/Colors
