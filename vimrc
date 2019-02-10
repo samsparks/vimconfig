@@ -9,14 +9,11 @@ Plugin 'VundleVim/Vundle.vim'
 
 Bundle 'octol/vim-cpp-enhanced-highlight'
 "Bundle 'dracula/vim'
-Bundle 'https://github.com/nanotech/jellybeans.vim.git'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-obsession'
 Bundle 'dhruvasagar/vim-prosession'
 Bundle 'vim-airline/vim-airline'
 Bundle 'vim-airline/vim-airline-themes'
- " uninstall exuberant-ctags if tagbar doesn't have value
-Bundle 'majutsushi/tagbar'
-"Bundle 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
@@ -90,6 +87,11 @@ endif
 
 " Theme/Colors
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"syntax on " syntax highlighting on
-colorscheme jellybeans
-let g:airline_theme="bubblegum"
+" Important: If using in a terminal, your color scheme and palette needs to
+" match solarized. gnome-terminal, for example, as solarized as options for 
+" both.
+" See https://github.com/altercation/vim-colors-solarized#important-note-for-terminal-users
+syntax enable
+set background=dark
+colorscheme solarized
+let g:airline_theme="solarized_flood"
