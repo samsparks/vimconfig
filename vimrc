@@ -6,14 +6,12 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/lightline.vim'
 
 Bundle 'octol/vim-cpp-enhanced-highlight'
-"Bundle 'dracula/vim'
 Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-obsession'
 Bundle 'dhruvasagar/vim-prosession'
-Bundle 'vim-airline/vim-airline'
-Bundle 'vim-airline/vim-airline-themes'
 
 call vundle#end()
 filetype plugin indent on
@@ -94,4 +92,3 @@ endif
 syntax enable
 set background=dark
 colorscheme solarized
-let g:airline_theme="solarized_flood"
