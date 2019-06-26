@@ -92,3 +92,11 @@ endif
 syntax enable
 set background=dark
 colorscheme solarized
+let g:lightline = {
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'absolutepath' ] ],
+      \ }
+      \ }
