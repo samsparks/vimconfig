@@ -8,6 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 
+Bundle 'scrooloose/syntastic'
 "Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'altercation/vim-colors-solarized'
 "Bundle 'tpope/vim-obsession'
@@ -100,6 +101,17 @@ let g:lightline = {
       \   'left': [ [ 'absolutepath' ] ],
       \ }
       \ }
+
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " XFCE4 terminal fix
 " I spend much time in xfce4 terminal, which has problems with xterm-256color
