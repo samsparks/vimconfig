@@ -1,3 +1,7 @@
+if !has('nvim')
+   " Nothing yet
+endif
+
 set nocompatible " get out of horrible vi-compatible mode
 
 "" set the runtime path to include Vundle and initialize
@@ -110,8 +114,9 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
 
 " XFCE4 terminal fix
 " I spend much time in xfce4 terminal, which has problems with xterm-256color
