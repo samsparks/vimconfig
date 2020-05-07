@@ -17,7 +17,7 @@ git -C bundle clone https://github.com/VundleVim/Vundle.vim.git
 
 * For neovim support
 ```sh
-mkdir ~/.config/nvim
+mkdir -p ~/.config/nvim
 ln -s ~/.vim/vimrc ~/.config/nvim/init.vim
 ```
 
