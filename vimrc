@@ -1,10 +1,6 @@
-if !has('nvim')
-   " Nothing yet
-endif
-
 set nocompatible " get out of horrible vi-compatible mode
 
-"" set the runtime path to include Vundle and initialize
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -12,11 +8,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'itchyny/lightline.vim'
 
-Bundle 'scrooloose/syntastic'
-"Bundle 'octol/vim-cpp-enhanced-highlight'
+Bundle 'octol/vim-cpp-enhanced-highlight'
 Bundle 'altercation/vim-colors-solarized'
-"Bundle 'tpope/vim-obsession'
-"Bundle 'dhruvasagar/vim-prosession'
+Bundle 'tpope/vim-obsession'
+Bundle 'dhruvasagar/vim-prosession'
 
 call vundle#end()
 filetype plugin indent on
@@ -105,20 +100,3 @@ let g:lightline = {
       \   'left': [ [ 'absolutepath' ] ],
       \ }
       \ }
-
-" Syntastic
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_config_file = ".syntastic_cpp_config"
-
-" XFCE4 terminal fix
-" I spend much time in xfce4 terminal, which has problems with xterm-256color
-" https://github.com/neovim/neovim/issues/7722
-set guicursor=
